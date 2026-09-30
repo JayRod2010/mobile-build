@@ -42,6 +42,10 @@ img{
     text-align: center;
 }
 
+a{
+    color: black;
+}
+
 @media (min-width: 1024px) {
     .page {
         grid-template-columns:1fr 2fr 1fr;
