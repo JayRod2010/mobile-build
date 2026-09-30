@@ -4,21 +4,58 @@
     grid-template-areas: 
         "header"
         "main"
-        "aside"
+        "aside-right"
+        "aside-left"
         "footer";
 }
+img{
+    height: 300px;
+    width: 300px;
+}
 
-.site-header { grid-area: header; }
+.site-header { 
+    grid-area: header; 
+    background-color: gray;
+}
 .site-main { grid-area: main; } 
-.site-aside { grid-area: aside; }
+.site-aside-right { 
+    grid-area: aside-right; 
+    background-color: gray;
+}
+.site-aside-left { 
+    grid-area: aside-left;
+    background-color: gray;
+}
 .site-footer { grid-area: footer; }
 
-@media (min-width: 600px) {
+.products{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.products-card{
+    background-color: blueviolet;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
     .page {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns:1fr 2fr 1fr;
         grid-template-areas: 
-            "header header"
-            "main aside"
-            "footer footer";
+            "header header header header"
+            "aside-left main main aside-right"
+            "footer footer footer footer";
+            
+    }
+    .site-aside-left{
+        max-width: 22vw;
+    }
+
+    .site-aside-right{
+        max-width: 22vw;
     }
 }
